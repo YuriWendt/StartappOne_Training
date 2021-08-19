@@ -9,10 +9,10 @@ function FastState() {
   useEffect(() => {
     const intervalId = setInterval(() => {
         setTimeout(() => {
-            setValue(value + 1);
+            setValue((oldValue) => value + 1);
             valueWithRef.current = valueWithRef.current + 1;
-        }, 100);
-    }, 1000);
+        }, 1000);
+    }, 100);
     return () => clearInterval(intervalId);
   }, [value, setValue])
 
